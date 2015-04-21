@@ -1,0 +1,864 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 4
+-n 3 -fastpaths -xml lcdtest.twx lcdtest.ncd -o lcdtest.twr lcdtest.pcf -ucf
+s3esk_startup.ucf
+
+Design file:              lcdtest.ncd
+Physical constraint file: lcdtest.pcf
+Device,package,speed:     xc3s500e,fg320,-4 (PRODUCTION 1.27 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+INFO:Timing:3390 - This architecture does not support a default System Jitter 
+   value, please add SYSTEM_JITTER constraint to the UCF to modify the Clock 
+   Uncertainty calculation.
+INFO:Timing:3389 - This architecture does not support 'Discrete Jitter' and 
+   'Phase Error' calculations, these terms will be zero in the Clock 
+   Uncertainty calculation.  Please make appropriate modification to 
+   SYSTEM_JITTER to account for the unsupported Discrete Jitter and Phase 
+   Error.
+
+================================================================================
+Timing constraint: NET "CCLK_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 9082366 paths analyzed, 667 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  19.977ns.
+--------------------------------------------------------------------------------
+
+Paths for end point M0/M0/lcdstate_2 (SLICE_X50Y75.SR), 308357 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.023ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M0/M0/lcdcount_4 (FF)
+  Destination:          M0/M0/lcdstate_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.977ns (Levels of Logic = 14)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CCLK_BUFGP rising at 0.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M0/M0/lcdcount_4 to M0/M0/lcdstate_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y75.XQ      Tcko                  0.591   M0/M0/lcdcount<4>
+                                                       M0/M0/lcdcount_4
+    SLICE_X53Y78.F2      net (fanout=1)        0.695   M0/M0/lcdcount<4>
+    SLICE_X53Y78.COUT    Topcyf                1.162   M0/M0/old_lcdcount_27_addsub0000<4>
+                                                       M0/M0/lcdcount<4>_rt
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.Y       Tciny                 0.869   M0/M0/old_lcdcount_27_addsub0000<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_xor<9>
+    SLICE_X52Y85.G3      net (fanout=4)        0.308   M0/M0/old_lcdcount_27_addsub0000<9>
+    SLICE_X52Y85.Y       Tilo                  0.759   N1224
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.F4      net (fanout=5)        0.746   M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.X       Tilo                  0.759   M0/M0/old_lcdstate_29_cmp_eq0000145
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.G3      net (fanout=4)        0.304   M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.Y       Tilo                  0.759   N661
+                                                       M0/M0/old_lcdstate_29_cmp_eq00021
+    SLICE_X52Y84.F4      net (fanout=2)        0.049   M0/M0/old_lcdstate_29_cmp_eq0002
+    SLICE_X52Y84.X       Tilo                  0.759   N661
+                                                       M0/M0/_old_lcdcount_30<4>12_SW0_SW0
+    SLICE_X52Y79.G1      net (fanout=1)        0.622   N661
+    SLICE_X52Y79.Y       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>12
+    SLICE_X52Y79.F3      net (fanout=5)        0.087   M0/M0/N96
+    SLICE_X52Y79.X       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>39
+    SLICE_X54Y79.F2      net (fanout=11)       0.942   M0/M0/_old_lcdcount_30<4>
+    SLICE_X54Y79.X       Tilo                  0.759   M0/M0/N54
+                                                       M0/M0/lcdstate_mux0000<32>3
+    SLICE_X54Y77.G2      net (fanout=16)       0.818   M0/M0/N54
+    SLICE_X54Y77.Y       Tilo                  0.759   M0/M0/N751
+                                                       M0/M0/_old_lcdstate_37<3>31
+    SLICE_X54Y77.F4      net (fanout=5)        0.358   M0/M0/N99
+    SLICE_X54Y77.X       Tilo                  0.759   M0/M0/N751
+                                                       M0/M0/_old_lcdcount_42<5>11
+    SLICE_X53Y75.F2      net (fanout=4)        0.724   M0/M0/N751
+    SLICE_X53Y75.X       Tilo                  0.704   M0/M0/_old_lcdcount_42<5>
+                                                       M0/M0/_old_lcdcount_42<5>
+    SLICE_X50Y70.F1      net (fanout=16)       1.527   M0/M0/_old_lcdcount_42<5>
+    SLICE_X50Y70.X       Tilo                  0.759   M0/M0/lcdstate_mux0000<38>20
+                                                       M0/M0/lcdstate_mux0000<38>20
+    SLICE_X50Y75.SR      net (fanout=1)        0.853   M0/M0/lcdstate_mux0000<38>20
+    SLICE_X50Y75.CLK     Tsrck                 0.910   M0/M0/lcdstate<2>
+                                                       M0/M0/lcdstate_2
+    -------------------------------------------------  ---------------------------
+    Total                                     19.977ns (11.944ns logic, 8.033ns route)
+                                                       (59.8% logic, 40.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.052ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M0/M0/lcdcount_0 (FF)
+  Destination:          M0/M0/lcdstate_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.943ns (Levels of Logic = 16)
+  Clock Path Skew:      -0.005ns (0.010 - 0.015)
+  Source Clock:         CCLK_BUFGP rising at 0.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M0/M0/lcdcount_0 to M0/M0/lcdstate_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y76.YQ      Tcko                  0.652   M0/M0/lcdcount<1>
+                                                       M0/M0/lcdcount_0
+    SLICE_X53Y76.F4      net (fanout=1)        0.364   M0/M0/lcdcount<0>
+    SLICE_X53Y76.COUT    Topcyf                1.162   M0/M0/old_lcdcount_27_addsub0000<0>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_lut<0>_INV_0
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<0>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<1>
+    SLICE_X53Y77.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<1>
+    SLICE_X53Y77.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<2>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<2>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<3>
+    SLICE_X53Y78.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<3>
+    SLICE_X53Y78.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.Y       Tciny                 0.869   M0/M0/old_lcdcount_27_addsub0000<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_xor<9>
+    SLICE_X52Y85.G3      net (fanout=4)        0.308   M0/M0/old_lcdcount_27_addsub0000<9>
+    SLICE_X52Y85.Y       Tilo                  0.759   N1224
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.F4      net (fanout=5)        0.746   M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.X       Tilo                  0.759   M0/M0/old_lcdstate_29_cmp_eq0000145
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.G3      net (fanout=4)        0.304   M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.Y       Tilo                  0.759   N661
+                                                       M0/M0/old_lcdstate_29_cmp_eq00021
+    SLICE_X52Y84.F4      net (fanout=2)        0.049   M0/M0/old_lcdstate_29_cmp_eq0002
+    SLICE_X52Y84.X       Tilo                  0.759   N661
+                                                       M0/M0/_old_lcdcount_30<4>12_SW0_SW0
+    SLICE_X52Y79.G1      net (fanout=1)        0.622   N661
+    SLICE_X52Y79.Y       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>12
+    SLICE_X52Y79.F3      net (fanout=5)        0.087   M0/M0/N96
+    SLICE_X52Y79.X       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>39
+    SLICE_X54Y79.F2      net (fanout=11)       0.942   M0/M0/_old_lcdcount_30<4>
+    SLICE_X54Y79.X       Tilo                  0.759   M0/M0/N54
+                                                       M0/M0/lcdstate_mux0000<32>3
+    SLICE_X54Y77.G2      net (fanout=16)       0.818   M0/M0/N54
+    SLICE_X54Y77.Y       Tilo                  0.759   M0/M0/N751
+                                                       M0/M0/_old_lcdstate_37<3>31
+    SLICE_X54Y77.F4      net (fanout=5)        0.358   M0/M0/N99
+    SLICE_X54Y77.X       Tilo                  0.759   M0/M0/N751
+                                                       M0/M0/_old_lcdcount_42<5>11
+    SLICE_X53Y75.F2      net (fanout=4)        0.724   M0/M0/N751
+    SLICE_X53Y75.X       Tilo                  0.704   M0/M0/_old_lcdcount_42<5>
+                                                       M0/M0/_old_lcdcount_42<5>
+    SLICE_X50Y70.F1      net (fanout=16)       1.527   M0/M0/_old_lcdcount_42<5>
+    SLICE_X50Y70.X       Tilo                  0.759   M0/M0/lcdstate_mux0000<38>20
+                                                       M0/M0/lcdstate_mux0000<38>20
+    SLICE_X50Y75.SR      net (fanout=1)        0.853   M0/M0/lcdstate_mux0000<38>20
+    SLICE_X50Y75.CLK     Tsrck                 0.910   M0/M0/lcdstate<2>
+                                                       M0/M0/lcdstate_2
+    -------------------------------------------------  ---------------------------
+    Total                                     19.943ns (12.241ns logic, 7.702ns route)
+                                                       (61.4% logic, 38.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.059ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M0/M0/lcdcount_4 (FF)
+  Destination:          M0/M0/lcdstate_2 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.941ns (Levels of Logic = 14)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CCLK_BUFGP rising at 0.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M0/M0/lcdcount_4 to M0/M0/lcdstate_2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y75.XQ      Tcko                  0.591   M0/M0/lcdcount<4>
+                                                       M0/M0/lcdcount_4
+    SLICE_X53Y78.F2      net (fanout=1)        0.695   M0/M0/lcdcount<4>
+    SLICE_X53Y78.COUT    Topcyf                1.162   M0/M0/old_lcdcount_27_addsub0000<4>
+                                                       M0/M0/lcdcount<4>_rt
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.Y       Tciny                 0.869   M0/M0/old_lcdcount_27_addsub0000<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_xor<9>
+    SLICE_X52Y85.G3      net (fanout=4)        0.308   M0/M0/old_lcdcount_27_addsub0000<9>
+    SLICE_X52Y85.Y       Tilo                  0.759   N1224
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.F4      net (fanout=5)        0.746   M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.X       Tilo                  0.759   M0/M0/old_lcdstate_29_cmp_eq0000145
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.G3      net (fanout=4)        0.304   M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.Y       Tilo                  0.759   N661
+                                                       M0/M0/old_lcdstate_29_cmp_eq00021
+    SLICE_X52Y84.F4      net (fanout=2)        0.049   M0/M0/old_lcdstate_29_cmp_eq0002
+    SLICE_X52Y84.X       Tilo                  0.759   N661
+                                                       M0/M0/_old_lcdcount_30<4>12_SW0_SW0
+    SLICE_X52Y79.G1      net (fanout=1)        0.622   N661
+    SLICE_X52Y79.Y       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>12
+    SLICE_X52Y79.F3      net (fanout=5)        0.087   M0/M0/N96
+    SLICE_X52Y79.X       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>39
+    SLICE_X54Y79.F2      net (fanout=11)       0.942   M0/M0/_old_lcdcount_30<4>
+    SLICE_X54Y79.X       Tilo                  0.759   M0/M0/N54
+                                                       M0/M0/lcdstate_mux0000<32>3
+    SLICE_X52Y78.F1      net (fanout=16)       0.790   M0/M0/N54
+    SLICE_X52Y78.X       Tilo                  0.759   M0/M0/_old_lcdstate_37<6>
+                                                       M0/M0/_old_lcdstate_37<6>1
+    SLICE_X54Y77.F3      net (fanout=6)        0.350   M0/M0/_old_lcdstate_37<6>
+    SLICE_X54Y77.X       Tilo                  0.759   M0/M0/N751
+                                                       M0/M0/_old_lcdcount_42<5>11
+    SLICE_X53Y75.F2      net (fanout=4)        0.724   M0/M0/N751
+    SLICE_X53Y75.X       Tilo                  0.704   M0/M0/_old_lcdcount_42<5>
+                                                       M0/M0/_old_lcdcount_42<5>
+    SLICE_X50Y70.F1      net (fanout=16)       1.527   M0/M0/_old_lcdcount_42<5>
+    SLICE_X50Y70.X       Tilo                  0.759   M0/M0/lcdstate_mux0000<38>20
+                                                       M0/M0/lcdstate_mux0000<38>20
+    SLICE_X50Y75.SR      net (fanout=1)        0.853   M0/M0/lcdstate_mux0000<38>20
+    SLICE_X50Y75.CLK     Tsrck                 0.910   M0/M0/lcdstate<2>
+                                                       M0/M0/lcdstate_2
+    -------------------------------------------------  ---------------------------
+    Total                                     19.941ns (11.944ns logic, 7.997ns route)
+                                                       (59.9% logic, 40.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M0/M0/lcdcount_11 (SLICE_X52Y68.F1), 197535 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.032ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M0/M0/lcdcount_4 (FF)
+  Destination:          M0/M0/lcdcount_11 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.958ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.010ns (0.063 - 0.073)
+  Source Clock:         CCLK_BUFGP rising at 0.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M0/M0/lcdcount_4 to M0/M0/lcdcount_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y75.XQ      Tcko                  0.591   M0/M0/lcdcount<4>
+                                                       M0/M0/lcdcount_4
+    SLICE_X53Y78.F2      net (fanout=1)        0.695   M0/M0/lcdcount<4>
+    SLICE_X53Y78.COUT    Topcyf                1.162   M0/M0/old_lcdcount_27_addsub0000<4>
+                                                       M0/M0/lcdcount<4>_rt
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.Y       Tciny                 0.869   M0/M0/old_lcdcount_27_addsub0000<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_xor<9>
+    SLICE_X52Y85.G3      net (fanout=4)        0.308   M0/M0/old_lcdcount_27_addsub0000<9>
+    SLICE_X52Y85.Y       Tilo                  0.759   N1224
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.F4      net (fanout=5)        0.746   M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.X       Tilo                  0.759   M0/M0/old_lcdstate_29_cmp_eq0000145
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.G3      net (fanout=4)        0.304   M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.Y       Tilo                  0.759   N661
+                                                       M0/M0/old_lcdstate_29_cmp_eq00021
+    SLICE_X52Y84.F4      net (fanout=2)        0.049   M0/M0/old_lcdstate_29_cmp_eq0002
+    SLICE_X52Y84.X       Tilo                  0.759   N661
+                                                       M0/M0/_old_lcdcount_30<4>12_SW0_SW0
+    SLICE_X52Y79.G1      net (fanout=1)        0.622   N661
+    SLICE_X52Y79.Y       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>12
+    SLICE_X52Y79.F3      net (fanout=5)        0.087   M0/M0/N96
+    SLICE_X52Y79.X       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>39
+    SLICE_X54Y79.F2      net (fanout=11)       0.942   M0/M0/_old_lcdcount_30<4>
+    SLICE_X54Y79.X       Tilo                  0.759   M0/M0/N54
+                                                       M0/M0/lcdstate_mux0000<32>3
+    SLICE_X52Y78.F1      net (fanout=16)       0.790   M0/M0/N54
+    SLICE_X52Y78.X       Tilo                  0.759   M0/M0/_old_lcdstate_37<6>
+                                                       M0/M0/_old_lcdstate_37<6>1
+    SLICE_X52Y71.G1      net (fanout=6)        0.789   M0/M0/_old_lcdstate_37<6>
+    SLICE_X52Y71.Y       Tilo                  0.759   M0/M0/lcdstate_mux0000<32>104
+                                                       M0/M0/lcdstate_mux0000<32>71
+    SLICE_X51Y71.F3      net (fanout=3)        0.431   M0/M0/N118
+    SLICE_X51Y71.X       Tilo                  0.704   M0/M0/_old_lcdcount_42<4>
+                                                       M0/M0/_old_lcdcount_42<4>34
+    SLICE_X49Y72.G1      net (fanout=16)       0.737   M0/M0/_old_lcdcount_42<4>
+    SLICE_X49Y72.Y       Tilo                  0.704   M0/M0/lcdaddr
+                                                       M0/M0/lcdstate_cmp_eq000311
+    SLICE_X52Y68.F1      net (fanout=4)        1.587   M0/M0/N721
+    SLICE_X52Y68.CLK     Tfck                  0.892   M0/M0/lcdcount<11>
+                                                       M0/M0/lcdcount_mux0000<7>
+                                                       M0/M0/lcdcount_11
+    -------------------------------------------------  ---------------------------
+    Total                                     19.958ns (11.871ns logic, 8.087ns route)
+                                                       (59.5% logic, 40.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.061ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M0/M0/lcdcount_0 (FF)
+  Destination:          M0/M0/lcdcount_11 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.924ns (Levels of Logic = 17)
+  Clock Path Skew:      -0.015ns (0.063 - 0.078)
+  Source Clock:         CCLK_BUFGP rising at 0.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M0/M0/lcdcount_0 to M0/M0/lcdcount_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y76.YQ      Tcko                  0.652   M0/M0/lcdcount<1>
+                                                       M0/M0/lcdcount_0
+    SLICE_X53Y76.F4      net (fanout=1)        0.364   M0/M0/lcdcount<0>
+    SLICE_X53Y76.COUT    Topcyf                1.162   M0/M0/old_lcdcount_27_addsub0000<0>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_lut<0>_INV_0
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<0>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<1>
+    SLICE_X53Y77.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<1>
+    SLICE_X53Y77.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<2>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<2>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<3>
+    SLICE_X53Y78.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<3>
+    SLICE_X53Y78.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.Y       Tciny                 0.869   M0/M0/old_lcdcount_27_addsub0000<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_xor<9>
+    SLICE_X52Y85.G3      net (fanout=4)        0.308   M0/M0/old_lcdcount_27_addsub0000<9>
+    SLICE_X52Y85.Y       Tilo                  0.759   N1224
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.F4      net (fanout=5)        0.746   M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.X       Tilo                  0.759   M0/M0/old_lcdstate_29_cmp_eq0000145
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.G3      net (fanout=4)        0.304   M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.Y       Tilo                  0.759   N661
+                                                       M0/M0/old_lcdstate_29_cmp_eq00021
+    SLICE_X52Y84.F4      net (fanout=2)        0.049   M0/M0/old_lcdstate_29_cmp_eq0002
+    SLICE_X52Y84.X       Tilo                  0.759   N661
+                                                       M0/M0/_old_lcdcount_30<4>12_SW0_SW0
+    SLICE_X52Y79.G1      net (fanout=1)        0.622   N661
+    SLICE_X52Y79.Y       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>12
+    SLICE_X52Y79.F3      net (fanout=5)        0.087   M0/M0/N96
+    SLICE_X52Y79.X       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>39
+    SLICE_X54Y79.F2      net (fanout=11)       0.942   M0/M0/_old_lcdcount_30<4>
+    SLICE_X54Y79.X       Tilo                  0.759   M0/M0/N54
+                                                       M0/M0/lcdstate_mux0000<32>3
+    SLICE_X52Y78.F1      net (fanout=16)       0.790   M0/M0/N54
+    SLICE_X52Y78.X       Tilo                  0.759   M0/M0/_old_lcdstate_37<6>
+                                                       M0/M0/_old_lcdstate_37<6>1
+    SLICE_X52Y71.G1      net (fanout=6)        0.789   M0/M0/_old_lcdstate_37<6>
+    SLICE_X52Y71.Y       Tilo                  0.759   M0/M0/lcdstate_mux0000<32>104
+                                                       M0/M0/lcdstate_mux0000<32>71
+    SLICE_X51Y71.F3      net (fanout=3)        0.431   M0/M0/N118
+    SLICE_X51Y71.X       Tilo                  0.704   M0/M0/_old_lcdcount_42<4>
+                                                       M0/M0/_old_lcdcount_42<4>34
+    SLICE_X49Y72.G1      net (fanout=16)       0.737   M0/M0/_old_lcdcount_42<4>
+    SLICE_X49Y72.Y       Tilo                  0.704   M0/M0/lcdaddr
+                                                       M0/M0/lcdstate_cmp_eq000311
+    SLICE_X52Y68.F1      net (fanout=4)        1.587   M0/M0/N721
+    SLICE_X52Y68.CLK     Tfck                  0.892   M0/M0/lcdcount<11>
+                                                       M0/M0/lcdcount_mux0000<7>
+                                                       M0/M0/lcdcount_11
+    -------------------------------------------------  ---------------------------
+    Total                                     19.924ns (12.168ns logic, 7.756ns route)
+                                                       (61.1% logic, 38.9% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.108ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M0/M0/lcdcount_4 (FF)
+  Destination:          M0/M0/lcdcount_11 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.882ns (Levels of Logic = 15)
+  Clock Path Skew:      -0.010ns (0.063 - 0.073)
+  Source Clock:         CCLK_BUFGP rising at 0.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M0/M0/lcdcount_4 to M0/M0/lcdcount_11
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y75.XQ      Tcko                  0.591   M0/M0/lcdcount<4>
+                                                       M0/M0/lcdcount_4
+    SLICE_X53Y78.F2      net (fanout=1)        0.695   M0/M0/lcdcount<4>
+    SLICE_X53Y78.COUT    Topcyf                1.162   M0/M0/old_lcdcount_27_addsub0000<4>
+                                                       M0/M0/lcdcount<4>_rt
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.Y       Tciny                 0.869   M0/M0/old_lcdcount_27_addsub0000<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_xor<9>
+    SLICE_X52Y85.G3      net (fanout=4)        0.308   M0/M0/old_lcdcount_27_addsub0000<9>
+    SLICE_X52Y85.Y       Tilo                  0.759   N1224
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.F4      net (fanout=5)        0.746   M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.X       Tilo                  0.759   M0/M0/old_lcdstate_29_cmp_eq0000145
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.G3      net (fanout=4)        0.304   M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X52Y84.Y       Tilo                  0.759   N661
+                                                       M0/M0/old_lcdstate_29_cmp_eq00021
+    SLICE_X52Y84.F4      net (fanout=2)        0.049   M0/M0/old_lcdstate_29_cmp_eq0002
+    SLICE_X52Y84.X       Tilo                  0.759   N661
+                                                       M0/M0/_old_lcdcount_30<4>12_SW0_SW0
+    SLICE_X52Y79.G1      net (fanout=1)        0.622   N661
+    SLICE_X52Y79.Y       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>12
+    SLICE_X52Y79.F3      net (fanout=5)        0.087   M0/M0/N96
+    SLICE_X52Y79.X       Tilo                  0.759   M0/M0/_old_lcdcount_30<4>
+                                                       M0/M0/_old_lcdcount_30<4>39
+    SLICE_X54Y79.F2      net (fanout=11)       0.942   M0/M0/_old_lcdcount_30<4>
+    SLICE_X54Y79.X       Tilo                  0.759   M0/M0/N54
+                                                       M0/M0/lcdstate_mux0000<32>3
+    SLICE_X54Y77.G2      net (fanout=16)       0.818   M0/M0/N54
+    SLICE_X54Y77.Y       Tilo                  0.759   M0/M0/N751
+                                                       M0/M0/_old_lcdstate_37<3>31
+    SLICE_X52Y71.G3      net (fanout=5)        0.685   M0/M0/N99
+    SLICE_X52Y71.Y       Tilo                  0.759   M0/M0/lcdstate_mux0000<32>104
+                                                       M0/M0/lcdstate_mux0000<32>71
+    SLICE_X51Y71.F3      net (fanout=3)        0.431   M0/M0/N118
+    SLICE_X51Y71.X       Tilo                  0.704   M0/M0/_old_lcdcount_42<4>
+                                                       M0/M0/_old_lcdcount_42<4>34
+    SLICE_X49Y72.G1      net (fanout=16)       0.737   M0/M0/_old_lcdcount_42<4>
+    SLICE_X49Y72.Y       Tilo                  0.704   M0/M0/lcdaddr
+                                                       M0/M0/lcdstate_cmp_eq000311
+    SLICE_X52Y68.F1      net (fanout=4)        1.587   M0/M0/N721
+    SLICE_X52Y68.CLK     Tfck                  0.892   M0/M0/lcdcount<11>
+                                                       M0/M0/lcdcount_mux0000<7>
+                                                       M0/M0/lcdcount_11
+    -------------------------------------------------  ---------------------------
+    Total                                     19.882ns (11.871ns logic, 8.011ns route)
+                                                       (59.7% logic, 40.3% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M0/M0/lcdaddr (SLICE_X49Y72.F2), 66340 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     0.233ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M0/M0/lcdcount_4 (FF)
+  Destination:          M0/M0/lcdaddr (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.767ns (Levels of Logic = 15)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CCLK_BUFGP rising at 0.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M0/M0/lcdcount_4 to M0/M0/lcdaddr
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X51Y75.XQ      Tcko                  0.591   M0/M0/lcdcount<4>
+                                                       M0/M0/lcdcount_4
+    SLICE_X53Y78.F2      net (fanout=1)        0.695   M0/M0/lcdcount<4>
+    SLICE_X53Y78.COUT    Topcyf                1.162   M0/M0/old_lcdcount_27_addsub0000<4>
+                                                       M0/M0/lcdcount<4>_rt
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.Y       Tciny                 0.869   M0/M0/old_lcdcount_27_addsub0000<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_xor<9>
+    SLICE_X52Y85.G3      net (fanout=4)        0.308   M0/M0/old_lcdcount_27_addsub0000<9>
+    SLICE_X52Y85.Y       Tilo                  0.759   N1224
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.F4      net (fanout=5)        0.746   M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.X       Tilo                  0.759   M0/M0/old_lcdstate_29_cmp_eq0000145
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X51Y83.F2      net (fanout=4)        0.710   M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X51Y83.X       Tilo                  0.704   N582
+                                                       M0/M0/_old_lcdstate_29<4>_SW2
+    SLICE_X48Y84.F1      net (fanout=1)        1.015   N582
+    SLICE_X48Y84.X       Tilo                  0.759   M0/M0/_old_lcdstate_29<4>
+                                                       M0/M0/_old_lcdstate_29<4>
+    SLICE_X50Y85.G2      net (fanout=13)       0.457   M0/M0/_old_lcdstate_29<4>
+    SLICE_X50Y85.Y       Tilo                  0.759   N602
+                                                       M0/M0/_old_lcdcount_38<4>111
+    SLICE_X50Y85.F3      net (fanout=3)        0.048   M0/M0/N57
+    SLICE_X50Y85.X       Tilo                  0.759   N602
+                                                       M0/M0/_old_lcdcount_34<5>_SW0_SW0
+    SLICE_X49Y79.F2      net (fanout=1)        0.940   N602
+    SLICE_X49Y79.X       Tilo                  0.704   M0/M0/_old_lcdcount_34<5>
+                                                       M0/M0/_old_lcdcount_34<5>
+    SLICE_X52Y74.G4      net (fanout=15)       0.688   M0/M0/_old_lcdcount_34<5>
+    SLICE_X52Y74.Y       Tilo                  0.759   N471
+                                                       M0/M0/old_lcdstate_41_cmp_eq000211_SW0_SW0
+    SLICE_X52Y74.F4      net (fanout=1)        0.023   M0/M0/old_lcdstate_41_cmp_eq000211_SW0_SW0/O
+    SLICE_X52Y74.X       Tilo                  0.759   N471
+                                                       M0/M0/_old_lcdstate_41<7>_SW0
+    SLICE_X53Y72.G3      net (fanout=2)        0.364   N471
+    SLICE_X53Y72.Y       Tilo                  0.704   N892
+                                                       M0/M0/_old_lcdstate_41<7>
+    SLICE_X51Y68.BX      net (fanout=7)        1.368   M0/M0/_old_lcdstate_41<7>
+    SLICE_X51Y68.X       Tbxx                  0.739   N835
+                                                       M0/M0/lcdstate_cmp_eq00031_SW0_SW1
+    SLICE_X49Y72.F2      net (fanout=1)        0.664   N835
+    SLICE_X49Y72.CLK     Tfck                  0.837   M0/M0/lcdaddr
+                                                       M0/M0/lcdaddr_mux0000
+                                                       M0/M0/lcdaddr
+    -------------------------------------------------  ---------------------------
+    Total                                     19.767ns (11.741ns logic, 8.026ns route)
+                                                       (59.4% logic, 40.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.262ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M0/M0/lcdcount_0 (FF)
+  Destination:          M0/M0/lcdaddr (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.733ns (Levels of Logic = 17)
+  Clock Path Skew:      -0.005ns (0.073 - 0.078)
+  Source Clock:         CCLK_BUFGP rising at 0.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M0/M0/lcdcount_0 to M0/M0/lcdaddr
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X52Y76.YQ      Tcko                  0.652   M0/M0/lcdcount<1>
+                                                       M0/M0/lcdcount_0
+    SLICE_X53Y76.F4      net (fanout=1)        0.364   M0/M0/lcdcount<0>
+    SLICE_X53Y76.COUT    Topcyf                1.162   M0/M0/old_lcdcount_27_addsub0000<0>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_lut<0>_INV_0
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<0>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<1>
+    SLICE_X53Y77.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<1>
+    SLICE_X53Y77.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<2>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<2>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<3>
+    SLICE_X53Y78.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<3>
+    SLICE_X53Y78.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<4>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<5>
+    SLICE_X53Y79.COUT    Tbyp                  0.118   M0/M0/old_lcdcount_27_addsub0000<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.Y       Tciny                 0.869   M0/M0/old_lcdcount_27_addsub0000<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_xor<9>
+    SLICE_X52Y85.G3      net (fanout=4)        0.308   M0/M0/old_lcdcount_27_addsub0000<9>
+    SLICE_X52Y85.Y       Tilo                  0.759   N1224
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.F4      net (fanout=5)        0.746   M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.X       Tilo                  0.759   M0/M0/old_lcdstate_29_cmp_eq0000145
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X51Y83.F2      net (fanout=4)        0.710   M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X51Y83.X       Tilo                  0.704   N582
+                                                       M0/M0/_old_lcdstate_29<4>_SW2
+    SLICE_X48Y84.F1      net (fanout=1)        1.015   N582
+    SLICE_X48Y84.X       Tilo                  0.759   M0/M0/_old_lcdstate_29<4>
+                                                       M0/M0/_old_lcdstate_29<4>
+    SLICE_X50Y85.G2      net (fanout=13)       0.457   M0/M0/_old_lcdstate_29<4>
+    SLICE_X50Y85.Y       Tilo                  0.759   N602
+                                                       M0/M0/_old_lcdcount_38<4>111
+    SLICE_X50Y85.F3      net (fanout=3)        0.048   M0/M0/N57
+    SLICE_X50Y85.X       Tilo                  0.759   N602
+                                                       M0/M0/_old_lcdcount_34<5>_SW0_SW0
+    SLICE_X49Y79.F2      net (fanout=1)        0.940   N602
+    SLICE_X49Y79.X       Tilo                  0.704   M0/M0/_old_lcdcount_34<5>
+                                                       M0/M0/_old_lcdcount_34<5>
+    SLICE_X52Y74.G4      net (fanout=15)       0.688   M0/M0/_old_lcdcount_34<5>
+    SLICE_X52Y74.Y       Tilo                  0.759   N471
+                                                       M0/M0/old_lcdstate_41_cmp_eq000211_SW0_SW0
+    SLICE_X52Y74.F4      net (fanout=1)        0.023   M0/M0/old_lcdstate_41_cmp_eq000211_SW0_SW0/O
+    SLICE_X52Y74.X       Tilo                  0.759   N471
+                                                       M0/M0/_old_lcdstate_41<7>_SW0
+    SLICE_X53Y72.G3      net (fanout=2)        0.364   N471
+    SLICE_X53Y72.Y       Tilo                  0.704   N892
+                                                       M0/M0/_old_lcdstate_41<7>
+    SLICE_X51Y68.BX      net (fanout=7)        1.368   M0/M0/_old_lcdstate_41<7>
+    SLICE_X51Y68.X       Tbxx                  0.739   N835
+                                                       M0/M0/lcdstate_cmp_eq00031_SW0_SW1
+    SLICE_X49Y72.F2      net (fanout=1)        0.664   N835
+    SLICE_X49Y72.CLK     Tfck                  0.837   M0/M0/lcdaddr
+                                                       M0/M0/lcdaddr_mux0000
+                                                       M0/M0/lcdaddr
+    -------------------------------------------------  ---------------------------
+    Total                                     19.733ns (12.038ns logic, 7.695ns route)
+                                                       (61.0% logic, 39.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     0.333ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               M0/M0/lcdcount_6 (FF)
+  Destination:          M0/M0/lcdaddr (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      19.653ns (Levels of Logic = 14)
+  Clock Path Skew:      -0.014ns (0.073 - 0.087)
+  Source Clock:         CCLK_BUFGP rising at 0.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Maximum Data Path: M0/M0/lcdcount_6 to M0/M0/lcdaddr
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X55Y73.XQ      Tcko                  0.591   M0/M0/lcdcount<6>
+                                                       M0/M0/lcdcount_6
+    SLICE_X53Y79.F2      net (fanout=1)        0.699   M0/M0/lcdcount<6>
+    SLICE_X53Y79.COUT    Topcyf                1.162   M0/M0/old_lcdcount_27_addsub0000<6>
+                                                       M0/M0/lcdcount<6>_rt
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<6>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.CIN     net (fanout=1)        0.000   M0/M0/Madd_old_lcdcount_27_addsub0000_cy<7>
+    SLICE_X53Y80.Y       Tciny                 0.869   M0/M0/old_lcdcount_27_addsub0000<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_cy<8>
+                                                       M0/M0/Madd_old_lcdcount_27_addsub0000_xor<9>
+    SLICE_X52Y85.G3      net (fanout=4)        0.308   M0/M0/old_lcdcount_27_addsub0000<9>
+    SLICE_X52Y85.Y       Tilo                  0.759   N1224
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.F4      net (fanout=5)        0.746   M0/M0/old_lcdstate_29_cmp_eq0000115
+    SLICE_X52Y83.X       Tilo                  0.759   M0/M0/old_lcdstate_29_cmp_eq0000145
+                                                       M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X51Y83.F2      net (fanout=4)        0.710   M0/M0/old_lcdstate_29_cmp_eq0000145
+    SLICE_X51Y83.X       Tilo                  0.704   N582
+                                                       M0/M0/_old_lcdstate_29<4>_SW2
+    SLICE_X48Y84.F1      net (fanout=1)        1.015   N582
+    SLICE_X48Y84.X       Tilo                  0.759   M0/M0/_old_lcdstate_29<4>
+                                                       M0/M0/_old_lcdstate_29<4>
+    SLICE_X50Y85.G2      net (fanout=13)       0.457   M0/M0/_old_lcdstate_29<4>
+    SLICE_X50Y85.Y       Tilo                  0.759   N602
+                                                       M0/M0/_old_lcdcount_38<4>111
+    SLICE_X50Y85.F3      net (fanout=3)        0.048   M0/M0/N57
+    SLICE_X50Y85.X       Tilo                  0.759   N602
+                                                       M0/M0/_old_lcdcount_34<5>_SW0_SW0
+    SLICE_X49Y79.F2      net (fanout=1)        0.940   N602
+    SLICE_X49Y79.X       Tilo                  0.704   M0/M0/_old_lcdcount_34<5>
+                                                       M0/M0/_old_lcdcount_34<5>
+    SLICE_X52Y74.G4      net (fanout=15)       0.688   M0/M0/_old_lcdcount_34<5>
+    SLICE_X52Y74.Y       Tilo                  0.759   N471
+                                                       M0/M0/old_lcdstate_41_cmp_eq000211_SW0_SW0
+    SLICE_X52Y74.F4      net (fanout=1)        0.023   M0/M0/old_lcdstate_41_cmp_eq000211_SW0_SW0/O
+    SLICE_X52Y74.X       Tilo                  0.759   N471
+                                                       M0/M0/_old_lcdstate_41<7>_SW0
+    SLICE_X53Y72.G3      net (fanout=2)        0.364   N471
+    SLICE_X53Y72.Y       Tilo                  0.704   N892
+                                                       M0/M0/_old_lcdstate_41<7>
+    SLICE_X51Y68.BX      net (fanout=7)        1.368   M0/M0/_old_lcdstate_41<7>
+    SLICE_X51Y68.X       Tbxx                  0.739   N835
+                                                       M0/M0/lcdstate_cmp_eq00031_SW0_SW1
+    SLICE_X49Y72.F2      net (fanout=1)        0.664   N835
+    SLICE_X49Y72.CLK     Tfck                  0.837   M0/M0/lcdaddr
+                                                       M0/M0/lcdaddr_mux0000
+                                                       M0/M0/lcdaddr
+    -------------------------------------------------  ---------------------------
+    Total                                     19.653ns (11.623ns logic, 8.030ns route)
+                                                       (59.1% logic, 40.9% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: NET "CCLK_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point M0/M1/gstate_FSM_FFd2 (SLICE_X47Y78.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.015ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M0/M1/gstate_FSM_FFd3 (FF)
+  Destination:          M0/M1/gstate_FSM_FFd2 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.015ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CCLK_BUFGP rising at 20.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: M0/M1/gstate_FSM_FFd3 to M0/M1/gstate_FSM_FFd2
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X47Y78.XQ      Tcko                  0.473   M0/M1/gstate_FSM_FFd3
+                                                       M0/M1/gstate_FSM_FFd3
+    SLICE_X47Y78.BY      net (fanout=2)        0.407   M0/M1/gstate_FSM_FFd3
+    SLICE_X47Y78.CLK     Tckdi       (-Th)    -0.135   M0/M1/gstate_FSM_FFd3
+                                                       M0/M1/gstate_FSM_FFd2
+    -------------------------------------------------  ---------------------------
+    Total                                      1.015ns (0.608ns logic, 0.407ns route)
+                                                       (59.9% logic, 40.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M2/clk (SLICE_X25Y91.BY), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.025ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M2/clk (FF)
+  Destination:          M2/clk (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.025ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CCLK_BUFGP rising at 20.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: M2/clk to M2/clk
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X25Y91.YQ      Tcko                  0.470   M2/clk1
+                                                       M2/clk
+    SLICE_X25Y91.BY      net (fanout=2)        0.420   M2/clk1
+    SLICE_X25Y91.CLK     Tckdi       (-Th)    -0.135   M2/clk1
+                                                       M2/clk
+    -------------------------------------------------  ---------------------------
+    Total                                      1.025ns (0.605ns logic, 0.420ns route)
+                                                       (59.0% logic, 41.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point M0/M1/gstate_FSM_FFd12 (SLICE_X48Y78.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      1.062ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               M0/M1/gstate_FSM_FFd13 (FF)
+  Destination:          M0/M1/gstate_FSM_FFd12 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      1.062ns (Levels of Logic = 0)
+  Clock Path Skew:      0.000ns
+  Source Clock:         CCLK_BUFGP rising at 20.000ns
+  Destination Clock:    CCLK_BUFGP rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path: M0/M1/gstate_FSM_FFd13 to M0/M1/gstate_FSM_FFd12
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X48Y78.YQ      Tcko                  0.522   M0/M1/gstate_FSM_FFd12
+                                                       M0/M1/gstate_FSM_FFd13
+    SLICE_X48Y78.BX      net (fanout=2)        0.406   M0/M1/gstate_FSM_FFd13
+    SLICE_X48Y78.CLK     Tckdi       (-Th)    -0.134   M0/M1/gstate_FSM_FFd12
+                                                       M0/M1/gstate_FSM_FFd12
+    -------------------------------------------------  ---------------------------
+    Total                                      1.062ns (0.656ns logic, 0.406ns route)
+                                                       (61.8% logic, 38.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: NET "CCLK_BUFGP/IBUFG" PERIOD = 20 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 0.826ns (Tcl)
+  Physical resource: M0/M1/gstate_FSM_FFd12/CLK
+  Logical resource: M0/M1/gstate_FSM_FFd12/CK
+  Location pin: SLICE_X48Y78.CLK
+  Clock network: CCLK_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 0.826ns (Tch)
+  Physical resource: M0/M1/gstate_FSM_FFd12/CLK
+  Logical resource: M0/M1/gstate_FSM_FFd12/CK
+  Location pin: SLICE_X48Y78.CLK
+  Clock network: CCLK_BUFGP
+--------------------------------------------------------------------------------
+Slack: 18.348ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 1.652ns (605.327MHz) (Tcp)
+  Physical resource: M0/M1/gstate_FSM_FFd12/CLK
+  Logical resource: M0/M1/gstate_FSM_FFd12/CK
+  Location pin: SLICE_X48Y78.CLK
+  Clock network: CCLK_BUFGP
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock CCLK
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CCLK           |   19.977|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 9082366 paths, 0 nets, and 2499 connections
+
+Design statistics:
+   Minimum period:  19.977ns{1}   (Maximum frequency:  50.058MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed Apr 08 16:51:57 2015 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 212 MB
+
+
+

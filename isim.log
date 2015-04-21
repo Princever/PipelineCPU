@@ -1,0 +1,20 @@
+ISim log file
+Running: E:\Study\Computer Architecture\Lab\Lab1\lab1\test_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb E:/Study/Computer Architecture/Lab/Lab1/lab1/test_isim_beh.wdb 
+ISim P.20131013 (signature 0x7708f090)
+This is a Full version of ISim.
+WARNING:  For instance uut/U1/, width 1 of formal port MIO_ready is not equal to width 32 of actual constant.
+WARNING: File "E:/Study/Computer Architecture/Lab/Lab1/lab1/lcdtest.v" Line 17.  For instance uut/U2/, width 5 of formal port Addr is not equal to width 8 of actual signal ram_addr.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# restart
+# run 1.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us

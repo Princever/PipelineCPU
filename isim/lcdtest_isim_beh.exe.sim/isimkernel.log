@@ -1,0 +1,28 @@
+Command line:
+   lcdtest_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  3857
+
+Thu Apr 02 11:18:22 2015
+
+
+ Elaboration Time: 0.358801 sec
+
+ Current Memory Usage: 1167.87 Meg
+
+ Total Signals          : 215
+ Total Nets             : 1930
+ Total Signal Drivers   : 105
+ Total Blocks           : 20
+ Total Primitive Blocks : 16
+ Total Processes        : 128
+ Total Traceable Variables  : 117
+ Total Scalar Nets and Variables : 4996
+
+ Total Simulation Time: 0.436802 sec
+
+ Current Memory Usage: 1167.87 Meg
+
+Thu Apr 02 11:18:32 2015
+

@@ -1,0 +1,17 @@
+MO clock NULL clock.v vlg20/clock.bin 1428483008
+MO display NULL display.v vlg1E/display.bin 1428483008
+MO lcd NULL lcd.v vlg5F/lcd.bin 1428483008
+MO lcdtest NULL lcdtest.v vlg23/lcdtest.bin 1428483008
+MO genlcd NULL genlcd.v vlg7D/genlcd.bin 1428483008
+MO mux4to1_32 NULL mux4to1_32bit.v vlg2A/mux4to1__32.bin 1428483008
+MO mux3to1_32 NULL mux3to1_32bits.v vlg21/mux3to1__32.bin 1428483008
+MO data_path NULL data_path.v vlg5E/data__path.bin 1428483008
+MO mux2to1_32 NULL mux2to1_32bit.v vlg18/mux2to1__32.bin 1428483008
+MO mux4to1_5 NULL mux4to1_5bit.v vlg1A/mux4to1__5.bin 1428483008
+MO Regs NULL Regs.v vlg5D/_regs.bin 1428483008
+MO pbdebounce NULL pbdebounce.v vlg6F/pbdebounce.bin 1428483008
+MO ctrl NULL ctrl.v vlg51/ctrl.bin 1428483008
+MO gen_displaydata NULL gen_displaydata.v vlg09/gen__displaydata.bin 1428483008
+MO Muliti_cycle_Cpu NULL Muliti_cycle_Cpu.v vlg02/_muliti__cycle___cpu.bin 1428483008
+MO Mem_I_D NULL Mem_I_D.v vlg5E/_mem___i___d.bin 1428483008
+MO alu NULL alu.v vlg0A/alu.bin 1428483008

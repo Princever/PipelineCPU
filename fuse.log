@@ -1,0 +1,54 @@
+Running: D:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o E:/Study/Computer Architecture/Lab/Lab1/lab1/test_isim_beh.exe -prj E:/Study/Computer Architecture/Lab/Lab1/lab1/test_beh.prj work.test work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/Regs.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/mux4to1_5bit.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/mux4to1_32bit.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/mux3to1_32bits.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/mux2to1_32bit.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/alu.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/lcd.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/genlcd.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/data_path.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/ctrl.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/pbdebounce.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/Muliti_cycle_Cpu.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/Mem_I_D.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/gen_displaydata.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/display.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/clock.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/lcdtest.v" into library work
+Analyzing Verilog file "E:/Study/Computer Architecture/Lab/Lab1/lab1/test.v" into library work
+Analyzing Verilog file "D:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "E:/Study/Computer Architecture/Lab/Lab1/lab1/test.v" Line 39: Port LED is not connected to this instance
+WARNING:HDLCompiler:189 - "E:/Study/Computer Architecture/Lab/Lab1/lab1/lcdtest.v" Line 67: Size mismatch in connection of port <MIO_ready>. Formal port size is 1-bit while actual signal size is 32-bit.
+WARNING:HDLCompiler:189 - "E:/Study/Computer Architecture/Lab/Lab1/lab1/lcdtest.v" Line 88: Size mismatch in connection of port <Addr>. Formal port size is 5-bit while actual signal size is 8-bit.
+Completed static elaboration
+Compiling module gen_displaydata
+Compiling module lcd
+Compiling module genlcd
+Compiling module display
+Compiling module clock
+Compiling module pbdebounce
+Compiling module ctrl
+Compiling module alu
+Compiling module Regs
+Compiling module mux4to1_32
+Compiling module mux4to1_5
+Compiling module mux3to1_32
+Compiling module mux2to1_32
+Compiling module data_path
+Compiling module Muliti_cycle_Cpu
+Compiling module Mem_I_D
+Compiling module lcdtest
+Compiling module test
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 2 sub-compilation(s) to finish...
+Compiled 19 Verilog Units
+Built simulation executable E:/Study/Computer Architecture/Lab/Lab1/lab1/test_isim_beh.exe
+Fuse Memory Usage: 31840 KB
+Fuse CPU Usage: 701 ms
